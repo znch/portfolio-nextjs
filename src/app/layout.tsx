@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/ui/navbar";
+import Navbar from "@/app/ui/navbar";
 import { Afacad_Flux } from "next/font/google"
 
 const afacadFlux = Afacad_Flux({
@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-      className={`${roboto.className}`}
+      className={`${roboto.className} no-scrollbar scroll-smooth`}
       >
 
         <div className={`${afacadFlux.className} font-thin`}>
