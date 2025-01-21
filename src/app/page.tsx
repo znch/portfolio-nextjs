@@ -1,14 +1,13 @@
 import Image from "next/image";
 import { LogoPortfolio } from "@/app/ui/logoPortfolio";
-import { ArrowLongDownIcon, ArrowDownCircleIcon } from "@heroicons/react/24/solid";
+import { ScrollArrowButton } from "./ui/scrollArrowButton";
+import KdoCoInfo from "./ui/kdoCoInfo";
 
 
 export default function Home() {
 
-  const infoAbout = <div className="h-screen flex mt-20" id="infoAbout">
-  <div className="w-1/2"><h1 className="text-white text-center text-3xl font-thin">.</h1></div>
-  <div className="w-1/2"><h1 className="text-white text-center text-3xl font-thin">Kdo jsem.</h1></div>
-  </div>;
+  ;
+  
 
   return (
     <>
@@ -22,16 +21,17 @@ export default function Home() {
         </div>
         {/** Container pro šipku se scrollem */}
         <div className="h-full flex items-stretch">
-        <div className="h-10 w-10 mx-auto self-end pb-24">
-          <a href="#infoAbout"><span><ArrowLongDownIcon className="fill-white"></ArrowLongDownIcon></span></a>
+        <ScrollArrowButton elementId="infoAbout"></ScrollArrowButton>
         </div>
         </div>
-        </div>
-
+        
     
 
-    
-        {infoAbout}
+        
+        <KdoCoInfo></KdoCoInfo>
+        
+        
+        
       
     </>
     
