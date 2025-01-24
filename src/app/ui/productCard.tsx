@@ -16,8 +16,11 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
 
     return(
         <>
-        <div className="w-80 h-96 border-black border-2 relative">
-            <div className="h-3/5 w-full flex content-center">
+
+        <div className="flex">
+
+        <div className="w-80 h-full border-black border-2 relative">
+            <div className="h-64 w-full flex content-center">
                 
                 <h1 className="mx-auto my-auto font-thin text-2xl">PLACEHOLDER</h1>
             </div>
@@ -31,6 +34,9 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
                 </div>
             </div>
         </div>  
+        
+
+        </div>
         </>
     );
 }
