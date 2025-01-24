@@ -3,8 +3,10 @@ import { FunctionComponent } from "react";
 
 interface Props{
     productName: string;
+    productCategory: string;
     productDescription: string;
     price: number;
+    amountInStock: number;
 }
 
 
