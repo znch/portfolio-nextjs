@@ -1,9 +1,9 @@
+
 import sqlite3 from "sqlite3";
 import SQL from 'sql-template-strings'
 import { open } from 'sqlite';
 import SearchBar from "./searchbar"
 import ProductCard from "./productCard";
-
 
 export function EshopPanelTop() {
 
@@ -32,16 +32,10 @@ export function EshopPanelSide(){
     );
 }
 
-async function getProductData(column: string){
-    const db = new sqlite3.Database('../../eshopMockupData.db', sqlite3.READONLY);
-    const columnData = await db.run(`SELECT product_name FROM products`);
-    return columnData;
-}
+
 
 export function ProductWrapper() {
 
-    const data = getProductData("product_name")
-    console.log(data)
 
     return(
     <>
