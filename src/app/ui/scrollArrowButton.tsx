@@ -20,7 +20,7 @@ export const ScrollArrowButton : FunctionComponent<Props> = (props) => {
         <>
         
         <div className={`h-10 w-10 mx-auto self-end pb-24`}>
-          <a href="" onClick={(e => {let scrollElement = document.getElementById(`${elementId}`); e.preventDefault(); scrollElement && scrollElement.scrollIntoView({behavior: "smooth"})})}><span><ArrowLongDownIcon className="fill-white"></ArrowLongDownIcon></span></a>
+          <a href="" onClick={(e => {const scrollElement = document.getElementById(`${elementId}`); e.preventDefault(); scrollElement && scrollElement.scrollIntoView({behavior: "smooth"})})}><span><ArrowLongDownIcon className="fill-white"></ArrowLongDownIcon></span></a>
         </div>
         </>
 
