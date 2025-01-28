@@ -1,9 +1,6 @@
-
-import sqlite3 from "sqlite3";
-import SQL from 'sql-template-strings'
-import { open } from 'sqlite';
 import SearchBar from "./searchbar"
 import ProductCard from "./productCard";
+import { Product } from "../data/definitions";
 
 export function EshopPanelTop() {
 
@@ -34,13 +31,27 @@ export function EshopPanelSide(){
 
 
 
-export function ProductWrapper() {
+export async function ProductWrapper() {
 
+    
+
+
+    const fetchedProducts = await fetch('http://localhost:3000/data', {headers: {"Content-Type": "application/json"}}).then((response) => {return response.json()});
+    
+    const parseDebug = fetchedProducts;
+
+    const data = fetchedProducts.map((product: any) => {return <ProductCard key={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard>});
+    console.log(parseDebug);
+    
+
+
+    
 
     return(
     <>
     <div className="w-full">
-        <ProductCard productName="Název produktu" productCategory="" productDescription="Lorem ipsum popis produktu..." amountInStock={0} price={0}></ProductCard>
+        {data}
+        
     </div>
     </>
     );
