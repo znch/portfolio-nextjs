@@ -12,7 +12,7 @@ export function EshopPanelTop() {
     <div className="w-full h-24 flex flex-infline justify-between">
         <div className="flex-column">
             <h1 className={`text-4xl font-bold`}>PORT<span className="font-normal">EFFO!</span></h1>
-            <h2 className="mt-2 text-l italic font-thin">Přístav pro všechny vaše potřeby...</h2>
+            <h2 className="mt-2 text-l italic">Přístav pro všechny vaše potřeby...</h2>
         </div>
         <div className="my-auto">
             <SearchBar></SearchBar>
