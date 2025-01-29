@@ -6,12 +6,12 @@ export function EshopPanelTop() {
 
     return(
     <>
-    <div className="w-full h-24 flex flex-infline justify-between">
-        <div className="flex-column">
-            <h1 className={`text-4xl font-bold`}>PORT<span className="font-normal">EFFO!</span></h1>
-            <h2 className="mt-2 text-l italic">Přístav pro všechny vaše potřeby...</h2>
+    <div className="w-full h-24 flex flex-col md:flex-nowrap md:flex-row md:justify-between justify-center">
+        <div className="">
+            <h1 className={`text-center md:text-left text-4xl font-bold`}>PORT<span className="font-normal">EFFO!</span></h1>
+            <h2 className="text-center md:text-left mt-2 text-l italic">Přístav pro všechny vaše potřeby...</h2>
         </div>
-        <div className="my-auto">
+        <div className="my-auto pt-4 md:pt-0">
             <SearchBar></SearchBar>
         </div>
         
@@ -40,8 +40,7 @@ export async function ProductWrapper() {
     
     const parseDebug = fetchedProducts;
 
-    const data = fetchedProducts.map((product: any) => {return <ProductCard key={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard>});
-    console.log(parseDebug);
+    const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="mx-auto w-full"><ProductCard key={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>});
     
 
 
@@ -49,7 +48,7 @@ export async function ProductWrapper() {
 
     return(
     <>
-    <div className="w-full">
+    <div className="w-10/12 md:w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center">
         {data}
         
     </div>

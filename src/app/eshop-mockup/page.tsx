@@ -13,10 +13,10 @@ export default function Page() {
 
     return(
     <>
-    <div className={`${lexend.className} pt-32 mx-4 md:mx-auto md:w-10/12 `}>
+    <div className={`${lexend.className} pt-32 mx-auto w-screen md:w-10/12 mb-12`}>
         <EshopPanelTop></EshopPanelTop>
 
-        <div className="w-full">
+        <div className="w-full pt-16 flex content-center align-center">
         <ProductWrapper></ProductWrapper>
         </div>
         
