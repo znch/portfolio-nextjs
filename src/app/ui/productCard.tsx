@@ -21,17 +21,18 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
 
         
 
-        <div className="w-['76rem'] h-full flex-none bg-black border-black border-2">
-            <div className="h-64 w-full content-center bg-white">
+        <div className="w-[19rem] md:w-auto min-w-[19rem] mx-auto h-auto bg-black border-black border-2">
+            <div className="h-64 w-full content-center bg-gradient-to-bl from-violet-200 via-fuchsia-300 to-pink-200">
                 
-                <h1 className="mx-auto my-auto font-thin text-2xl text-center">PLACEHOLDER</h1>
+                <h1 className="mx-auto my-auto font-thin text-2xl text-center text-white">PLACEHOLDER</h1>
             </div>
-            <div className="h-max text-white">
-                <div className="mx-2 py-2 flex flex-wrap h-full content-between">
-                    <h1 className="text-2xl">{nazevProduktu}</h1>
-                    <p className="font-thin">{popisekProduktu}</p>
-                    <p>{cenaProduktu} Kč</p>
+            <div className="h-[16rem] text-white">
+                <div className="mx-2 py-2 flex flex-wrap h-full content-normal">
+                    <h1 className="text-xl lg:text-2xl">{nazevProduktu}</h1>
+                    <p className="font-thin h-max">{popisekProduktu}</p>
+                    
                     <div className="self-end">
+                    <p>{cenaProduktu}€</p>
                     <input type="number" className="w-1/5 mr-2"/>
                     <button className="border-white border-2"><span className="px-2">Přidat</span></button>
                     </div>

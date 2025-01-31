@@ -28,6 +28,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@theme{
+
+  --breakpoint-xs: 30rem;
+}
+
 
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */

@@ -13,7 +13,10 @@ export default function SearchBar(){
         
             <input type="text" className="appearance-none focus:outline-0 border-none my-2" size={12}  placeholder="Hledaný výraz..."/>
             <button className="ml-2 px-2 h-full bg-black text-white">Vyhledat</button>
+
+            
         </div>  
+        
         </>
     );
 }
