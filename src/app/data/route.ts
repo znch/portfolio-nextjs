@@ -19,4 +19,11 @@ export async function GET(req: Request, res: Response) {
     })
     
 }
+
+export async function fetchProducts(){
+
+    const fetchedProducts = await fetch('http://localhost:3000/data', {headers: {"Content-Type": "application/json"}}).then((response) => {return response.json()});
+
+    return fetchedProducts;
+}
  

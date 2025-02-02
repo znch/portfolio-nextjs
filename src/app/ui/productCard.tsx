@@ -21,8 +21,8 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
 
         
 
-        <div className="w-[19rem] md:w-auto min-w-[19rem] mx-auto h-auto bg-black border-black border-2">
-            <div className="h-64 w-full content-center bg-gradient-to-bl from-violet-200 via-fuchsia-300 to-pink-200">
+        <div className="w-[19rem] md:w-[18rem] mx-auto h-auto bg-black border-black border-2">
+            <div className="h-64 w-full content-center bg-gradient-to-tr from-stone-300 via-gray-500 to-zinc-700">
                 
                 <h1 className="mx-auto my-auto font-thin text-2xl text-center text-white">PLACEHOLDER</h1>
             </div>
