@@ -2,6 +2,7 @@
 
 import { FunctionComponent } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
 
 
 
@@ -14,11 +15,20 @@ interface Props{
     amountInStock: number;
     onClick: any;
     checkUserAmount: any;
+    initUserAmount: number;
+    
 }
 
 export const ProductRow: FunctionComponent<Props> = (props) => {
 
-    const amount = props.checkUserAmount;
+    const initAmount = props.initUserAmount;
+    
+
+    const [amount, setAmount] = useState(initAmount);
+    function handleOnChange(id:number , amount: number){
+        props.checkUserAmount(id, amount); 
+    }
+    
     
 
     return(
@@ -33,7 +43,7 @@ export const ProductRow: FunctionComponent<Props> = (props) => {
                 </div>
                 <div className="flex inline-flex content-baseline my-auto justify-end">
                     <h1 className="font-bold text-md md:text-lg mx-2 md:mx-4 my-auto align-middle">{(props.price * amount).toFixed(2)}€</h1>
-                    <input className="w-10 flex-none" size={2} type="number" value={amount} onChange={amount} min={0} max={props.amountInStock}/>
+                    <input className="w-10 flex-none" size={2} type="number" defaultValue={amount} onChange={(e) => {setAmount(Number(e.target.value)); handleOnChange(props.id, Number(e.target.value))}} min={0} max={props.amountInStock}/>
                     <button onClick={props.onClick} className="w-8"><span><XMarkIcon></XMarkIcon></span></button>
                 </div>
             </div>

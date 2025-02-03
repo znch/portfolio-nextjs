@@ -59,14 +59,10 @@ export function EshopPanelFilter(){
 
 
 export async function ProductWrapper() {
-
-    
-    
+    //fetchování JSON dat produktů z SQLite DB přes api
     const fetchedProducts = await fetchProducts();
 
-
-    
-    
+    //uložení listu komponent 
     const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="w-min"><ProductCard key={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>});
     
 

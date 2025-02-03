@@ -1,5 +1,8 @@
+'use client'
+
 import Image from "next/image";
 import { FunctionComponent } from "react";
+import { useState } from "react";
 
 interface Props{
     productName: string;

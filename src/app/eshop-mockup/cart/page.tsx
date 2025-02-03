@@ -4,7 +4,7 @@ import CartProductWrapper from "@/app/ui/cartProductWrapper";
 
 export default async function Page(){
 
-    
+        // fetchování json dat o produktech -> slice simuluje že uživatel má v košíku 5 produktů, passuju jako props do CartProductWrapper komponenty
         const fetchedProducts = await fetchProducts();
         const slicedProducts = fetchedProducts.slice(0, 5);
         const data = slicedProducts;
