@@ -1,10 +1,11 @@
 'use client'
 
 import Image from "next/image";
-import { FunctionComponent } from "react";
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
+import Link from "next/link";
 
 interface Props{
+    id: number;
     productName: string;
     productCategory: string;
     productDescription: string;
@@ -33,7 +34,9 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
             </div>
             <div className="h-[16rem] text-white">
                 <div className="mx-2 py-2 flex flex-wrap h-full content-normal">
-                    <h1 className="text-xl lg:text-2xl">{nazevProduktu}</h1>
+                    <Link href={`eshop-mockup/item/${props.id}`} className="no-underline hover:underline">
+                        <h1 className="text-xl lg:text-2xl">{nazevProduktu}</h1>
+                    </Link>
                     <p className="font-thin h-max">{popisekProduktu}</p>
                     
                     <div className="self-end">

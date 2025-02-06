@@ -3,7 +3,7 @@ import ProductCard from "./productCard";
 import { ShoppingCartIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { fetchProducts } from "../data/route";
-
+import Popup from "reactjs-popup";
 
 
 
@@ -11,10 +11,12 @@ export function EshopPanelTop() {
 
     return(
     <>
-    <div className="w-full md:w-10/12 mx-auto h-24 flex flex-col md:flex-nowrap md:flex-row md:justify-between justify-center h-max">
+    <div className="w-full md:w-11/12 mx-auto h-24 flex flex-col md:flex-nowrap md:flex-row md:justify-between justify-center h-max">
         <div className="">
+            <Link href="/eshop-mockup">
             <h1 className={`text-center md:text-left text-4xl font-bold`}>PORT<span className="font-normal">EFFO!</span></h1>
             <h2 className="text-center md:text-left mt-2 text-l italic tracking-tight">Přístav pro všechny vaše potřeby...</h2>
+            </Link>
         </div>
         
         
@@ -34,7 +36,7 @@ export async function ProductWrapper() {
     const fetchedProducts = await fetchProducts();
 
     //vytvoření listu komponent 
-    const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="w-min"><ProductCard key={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>}).slice(0,40);
+    const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="w-min"><ProductCard key={product.id} id={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>}).slice(0,40);
 
     //pagination
     const pages = new Array(data.length/20);

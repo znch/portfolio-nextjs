@@ -3,6 +3,7 @@
 import { FunctionComponent } from "react";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -39,7 +40,9 @@ export const ProductRow: FunctionComponent<Props> = (props) => {
             </div>
             <div className="w-full flex justify-between">
                 <div className="w-fit my-auto ml-px md:ml-2">
-                    <h1 className="text-xs md:text-lg tracking-tighter">{props.productName}</h1>
+                    <Link href={`./item/${props.id}`} className="no-underline hover:underline">
+                        <h1 className="text-xs md:text-lg tracking-tighter">{props.productName}</h1>
+                    </Link>
                 </div>
                 <div className="flex inline-flex content-baseline my-auto justify-end">
                     <h1 className="font-bold text-md md:text-lg mx-2 md:mx-4 my-auto align-middle">{(props.price * amount).toFixed(2)}€</h1>

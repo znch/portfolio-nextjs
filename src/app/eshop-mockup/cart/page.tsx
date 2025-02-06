@@ -1,6 +1,8 @@
 import {ProductRow} from "@/app/ui/productRow"; 
 import { fetchProducts } from "@/app/data/route";
 import CartProductWrapper from "@/app/ui/cartProductWrapper";
+import { EshopPanelTop } from "@/app/ui/eshop";
+
 
 export default async function Page(){
 
@@ -12,8 +14,9 @@ export default async function Page(){
     return(
         <>
         <div className="h-screen pt-32">
-            <div className="w-full md:w-11/12 mx-auto">
-                <h1 className="text-4xl text-center md:text-left ml-0 tracking-tighter mb-12">Váš nákup</h1>
+            <EshopPanelTop />
+            <div className="my-8 w-full md:w-11/12 mx-auto">
+                <h1 className="text-4xl text-center md:text-left ml-0 tracking-tighter mb-4">Váš nákup</h1>
                 <CartProductWrapper props={data}></CartProductWrapper>
                 
 
