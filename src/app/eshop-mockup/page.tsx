@@ -1,4 +1,6 @@
-import {EshopPanelFilter, ProductWrapper, EshopPanelTop} from "../ui/eshop";
+
+import {ProductWrapper, EshopPanelTop} from "../ui/eshop";
+import EshopPanelFilter from "../ui/eshopPanelFilter";
 
 
 
@@ -22,9 +24,9 @@ export default function Page() {
         
         
 
-        <div className="w-max pt-8 content-center align-center mx-auto">
+        
         <ProductWrapper></ProductWrapper>
-        </div>
+        
         
         
 

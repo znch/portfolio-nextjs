@@ -19,6 +19,8 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
     const popisekProduktu = props.productDescription;
     const cenaProduktu = props.price;
 
+    const [selectedAmount, setSelectedAmount] = useState(1)
+
     return(
         <>
 
@@ -36,7 +38,10 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
                     
                     <div className="self-end">
                     <p>{cenaProduktu}€</p>
-                    <input type="number" className="w-1/5 mr-2"/>
+                    <input type="number" value={selectedAmount} size={8} onChange={(e)=>{
+                        if(Number(e.target.value) > props.amountInStock){setSelectedAmount(props.amountInStock)}
+                        else {setSelectedAmount(Number(e.target.value))}
+                        }} min={0} max={props.amountInStock} className="w-max mr-2 text-black"/>
                     <button className="border-white border-2"><span className="px-2">Přidat</span></button>
                     </div>
                     

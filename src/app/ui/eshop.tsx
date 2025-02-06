@@ -1,8 +1,9 @@
 import SearchBar from "./searchbar";
 import ProductCard from "./productCard";
-import { ShoppingCartIcon, FunnelIcon } from "@heroicons/react/24/solid";
+import { ShoppingCartIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { fetchProducts } from "../data/route";
+
 
 
 
@@ -28,53 +29,36 @@ export function EshopPanelTop() {
     );
 }
 
-export function EshopPanelFilter(){
-
-    return(
-        <>
-            <div className="h-12 w-full md:w-11/12 xl:w-10/12 mx-auto flex flex-column justify-around xl:justify-between px-4 content-center border-y border-black border-double">
-                <div className="flex inline-flex">
-                    <div className="my-auto">
-                        <button className="">Filtrovat</button>
-                    </div>
-                    <div className="w-8 ml-2 my-auto">
-                        <span><FunnelIcon className=""></FunnelIcon></span>
-                    </div>
-                </div>
-                <Link className="my-auto" href="eshop-mockup/cart">
-                <div className="flex inline-flex">
-                    <div className="my-auto">
-                        <button className="">Košík</button>
-                    </div>
-                    <div className="ml-2 h-8 w-8 my-auto">
-                        <span><ShoppingCartIcon  className=""></ShoppingCartIcon></span>
-                    </div>
-                </div>
-                </Link>
-            </div>
-        </>
-    );
-}
-
-
-
 export async function ProductWrapper() {
     //fetchování JSON dat produktů z SQLite DB přes api
     const fetchedProducts = await fetchProducts();
 
-    //uložení listu komponent 
-    const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="w-min"><ProductCard key={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>});
-    
+    //vytvoření listu komponent 
+    const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="w-min"><ProductCard key={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>}).slice(0,40);
 
-    
+    //pagination
+    const pages = new Array(data.length/20);
 
     return(
-    <>
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-evenly gap-4">
-        {data}
-        
-    </div>
-    
-    </>
+        <>
+        <div className="mx-auto pt-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-4">
+                {data}
+            </div>
+        </div>
+        </>
     );
+    //alternativní vzhled se sidebarem
+    /**
+    <div className="w-full lg:w-11/12 pt-8 flex content-center justify-center mx-auto">
+        <div className="w-0 invisible lg:visible lg:w-2/12 border border-black">
+        
+        </div>
+        <div className="w-max px-2 lg:w-10/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-evenly gap-4">
+        {data}
+        </div>
+    </div>
+ */
+
 }
+

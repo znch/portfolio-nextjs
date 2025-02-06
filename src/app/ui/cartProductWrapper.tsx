@@ -9,7 +9,7 @@ export default function CartProductWrapper({props}: {props: any}){
     const original = props;
 
     //simuluju počet objednaných kusů v košíku
-    const originalUserAmount = [1, 1, 2, 1, 1];
+    const originalUserAmount = [1, 2, 1, 2, 4];
     
     //state handling
     const [products, setProducts] = useState(original);
