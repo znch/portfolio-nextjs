@@ -13,7 +13,7 @@ export default async function Page(){
 
     return(
         <>
-        <div className="h-screen pt-32">
+        <div className="h-screen pt-24">
             <EshopPanelTop />
             <div className="my-8 w-full md:w-11/12 mx-auto">
                 <h1 className="text-4xl text-center md:text-left ml-0 tracking-tighter mb-4">Váš nákup</h1>

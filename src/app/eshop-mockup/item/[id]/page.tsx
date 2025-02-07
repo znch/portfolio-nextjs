@@ -15,7 +15,7 @@ export default async function Page({params}: {params:Promise<{id: number}>}){
 
     return(
         <>
-        <div className="h-screen w-full pt-32">
+        <div className="h-screen w-full pt-24">
             <EshopPanelTop></EshopPanelTop>
             <div className="w-11/12 h-fit border-y border-black mx-auto my-8 py-2 tracking-tighter flex justify-end">
             <div className="my-auto mx-2">

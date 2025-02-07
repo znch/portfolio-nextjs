@@ -14,7 +14,7 @@ export default function Page() {
 */
     return(
     <>
-    <div className={` pt-32 mx-auto w-screen mb-12 grid grid-cols-1`}>
+    <div className={` pt-24 mx-auto w-screen mb-12 grid grid-cols-1`}>
         <div className="w-full mx-auto">
           <EshopPanelTop></EshopPanelTop>
           <div className="pt-8">
