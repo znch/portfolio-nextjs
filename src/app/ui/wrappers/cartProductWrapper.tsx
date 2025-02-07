@@ -1,5 +1,5 @@
 'use client';
-import { ProductRow } from "./productRow";
+import { ProductRow } from "../productUi/productRow";
 import { useState } from "react";
 
 

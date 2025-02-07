@@ -1,8 +1,9 @@
 import { fetchProducts } from "@/app/data/route";
-import {ProductPage} from "@/app/ui/productPage";
+import {ProductPage} from "@/app/ui/productUi/productPage";
 import { EshopPanelTop } from "@/app/ui/eshop";
 import Link from 'next/link';
 import { ShoppingCartIcon } from "@heroicons/react/24/solid";
+import ButtonShoppingCart from "@/app/ui/buttons/buttonShoppingCart"; 
 
 export default async function Page({params}: {params:Promise<{id: number}>}){
 
@@ -18,16 +19,11 @@ export default async function Page({params}: {params:Promise<{id: number}>}){
             <EshopPanelTop></EshopPanelTop>
             <div className="w-11/12 h-fit border-y border-black mx-auto my-8 py-2 tracking-tighter flex justify-end">
             <div className="my-auto mx-2">
-                <Link href="../cart">
+                
                 <div className="flex inline-flex">
-                    <div className="my-auto">
-                        <button className="">Košík</button>
-                    </div>
-                    <div className="ml-2 w-8">
-                        <span><ShoppingCartIcon  className=""></ShoppingCartIcon></span>
-                    </div>
+                    <ButtonShoppingCart></ButtonShoppingCart>
                 </div>
-                </Link>
+                
                 </div>
             </div>
 

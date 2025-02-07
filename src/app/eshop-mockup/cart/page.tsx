@@ -1,6 +1,6 @@
-import {ProductRow} from "@/app/ui/productRow"; 
+import {ProductRow} from "@/app/ui/productUi/productRow"; 
 import { fetchProducts } from "@/app/data/route";
-import CartProductWrapper from "@/app/ui/cartProductWrapper";
+import CartProductWrapper from "@/app/ui/wrappers/cartProductWrapper";
 import { EshopPanelTop } from "@/app/ui/eshop";
 
 
