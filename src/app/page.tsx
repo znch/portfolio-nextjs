@@ -27,9 +27,9 @@ export default function Home() {
         
     
 
-        
+        <div className="pb-12">
         <KdoCoInfo></KdoCoInfo>
-        
+        </div>
         
         
       

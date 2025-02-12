@@ -4,7 +4,7 @@ const lexend = Lexend_Giga({
   weight : ['100', '400'],
   subsets : ['latin'],
   display: 'swap',
-})
+});
 
 
 

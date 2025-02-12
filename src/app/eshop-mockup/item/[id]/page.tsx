@@ -9,6 +9,7 @@ export default async function Page({params}: {params:Promise<{id: number}>}){
 
     const id = (await params).id;
     const fetchedProducts = await fetchProducts();
+    //v databázi začíná id od jedničky, index ale začíná od nuly (první produkt bude na nule) -> odečítám 1
     const selectedProduct = fetchedProducts[id-1];
     
 
