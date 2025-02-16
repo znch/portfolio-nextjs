@@ -31,8 +31,9 @@ export async function ProductWrapper() {
     //fetchování JSON dat produktů z SQLite DB přes api
     const fetchedProducts = await fetchProducts();
 
-    //vytvoření listu komponent 
+    //vytvoření listu komponent (.slice abych měl jenom 40 produktů);
     const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="w-min"><ProductCard key={product.id} id={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>}).slice(0,40);
+    //nápad na improvement - přidání pagination, lazy loading
 
     
     return(

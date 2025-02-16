@@ -5,6 +5,11 @@ import { useState } from "react";
 
 export default function CartProductWrapper({props}: {props: any}){
 
+    function parseCartContent(){
+        
+
+    }
+
     // json s daty z parent (Cart Page) ukládám pro použití ve statu
     const original = props;
 
