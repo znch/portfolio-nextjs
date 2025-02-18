@@ -45,17 +45,6 @@ export async function ProductWrapper() {
         </div>
         </>
     );
-    //alternativní vzhled se sidebarem
-    /**
-    <div className="w-full lg:w-11/12 pt-8 flex content-center justify-center mx-auto">
-        <div className="w-0 invisible lg:visible lg:w-2/12 border border-black">
-        
-        </div>
-        <div className="w-max px-2 lg:w-10/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-evenly gap-4">
-        {data}
-        </div>
-    </div>
- */
-
+   
 }
 

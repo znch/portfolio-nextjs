@@ -1,4 +1,5 @@
 import { Lexend_Giga } from "next/font/google";
+import { useId } from "react";
 
 const lexend = Lexend_Giga({
   weight : ['100', '400'],
@@ -6,6 +7,7 @@ const lexend = Lexend_Giga({
   display: 'swap',
 });
 
+//implementovat react useId() na forms
 
 export function RegistrationFormClassic(){
 

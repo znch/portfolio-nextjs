@@ -13,43 +13,32 @@ interface Props{
     amountInStock: number;
 }
 
-let cartItemIds: Array<number> = [];
-
-// uloží id předmětu do sesionu, který accessuju v košíku -> logika na sestavení listu z id a množství
-function saveItemInCart(id: number, amount: number) {
-    //funguje jen za předpokladu že do sessionStorage nepřidávám žádná další data!!! -> bandaid solution v produ bych musel udělat nějaký parse algoritmus
-    let length = sessionStorage.length;
-    const cartItemKey = "cartItem".concat(String(length/2));
-    if(cartItemIds.length === 0){
-        cartItemIds.push(id);
-        sessionStorage.setItem(cartItemKey, String(id));
-        sessionStorage.setItem(cartItemKey.concat("amount"), String(amount));
-        console.log(`Ke klíči ${cartItemKey} bylo přiřazeno id ${id}`);
-        console.log(`Ke klíči ${cartItemKey.concat("amount")} bylo přiřazeno množství ${amount}`);
+let cartItems: any = [];
+//TODO: implementovat ukládání obsahu košíku do session storage
+function saveItemInCart(id: number, amount: number, amountInStock: number) {
+    let cartContent = new Object({productId: id, productAmount: amount});
+    if(cartItems.length === 0){
+        cartItems.push(cartContent);
+        console.log(cartItems)
         return;
     }
-
-    for(let i in cartItemIds){
-        console.log(i);
-        if(cartItemIds[i] == id)
-        {
-            const currentAmount: number = Number(sessionStorage.getItem(String("cartItem"+(i)+"amount")));
-            sessionStorage.setItem(String("cartItem"+(i)+"amount"), String(currentAmount+amount));
-            console.log(`U klíče ${"cartItem"+(i)+"amount"} bylo nastaveno množství ${currentAmount+amount} z předešlého ${currentAmount}`);
-            
-
-        } else {
-            sessionStorage.setItem(cartItemKey, String(id));
-            sessionStorage.setItem(cartItemKey.concat("amount"), String(amount));
-            cartItemIds.push(id);
-            console.log(`Ke klíči ${cartItemKey} bylo přiřazeno id ${id}`);
-            console.log(`Ke klíči ${cartItemKey.concat("amount")} bylo přiřazeno množství ${amount}`);
-            console.log(cartItemIds);
+    for(let i in cartItems)
+    {
+        if(cartItems[i].productId === id){
+            cartItems[i].amount += amount;
+            if(cartItems[i].amount > amountInStock){
+                cartItems[i].amount = amountInStock;
+                console.log(`Byla překročena maximální hodnota množství produktu. Nastavuji na amountInStock`)
+            }
+            console.log(`${cartItems}`)
             return;
         }
-    
     }
+    cartItems.push(cartContent);
+    console.log(`${cartItems}`)
+    
 }
+
 
 
 export const ProductCard : FunctionComponent<Props> = (props) => {
@@ -90,7 +79,7 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
                         if(Number(e.target.value) > props.amountInStock){setSelectedAmount(props.amountInStock)}
                         else {setSelectedAmount(Number(e.target.value))}
                         }} min={0} max={props.amountInStock} className="w-max mr-2 text-black"/>
-                    <button className="border-white border-2" onClick={() => {saveItemInCart(props.id, selectedAmount); handleShowAddedToCart()}}><span className="px-2">Přidat</span></button>{showAddedToCart && popisekPridano}
+                    <button className="border-white border-2" onClick={() => {saveItemInCart(props.id, selectedAmount, props.amountInStock); handleShowAddedToCart()}}><span className="px-2">Přidat</span></button>{showAddedToCart && popisekPridano}
                     </div>
                     
                 </div>
