@@ -34,7 +34,7 @@ export const ProductRow: FunctionComponent<Props> = (props) => {
 
     return(
       <>
-        <div className="border-y my-2 border-black w-full flex inline-flex">
+        <div className="border-y my-2 border-black w-full flex">
             <div className="h-24 bg-black w-24 content-center flex-none">
                 <h1 className="mx-auto my-auto font-thin text-sm text-center text-white tracking-tighter text-balance">PLACE HOLDER</h1>
             </div>
@@ -44,7 +44,7 @@ export const ProductRow: FunctionComponent<Props> = (props) => {
                         <h1 className="text-xs md:text-lg tracking-tighter">{props.productName}</h1>
                     </Link>
                 </div>
-                <div className="flex inline-flex content-baseline my-auto justify-end">
+                <div className="flex content-baseline my-auto justify-end">
                     <h1 className="font-bold text-md md:text-lg mx-2 md:mx-4 my-auto align-middle">{(props.price * amount).toFixed(2)}€</h1>
                     <input className="w-10 flex-none" size={2} type="number" value={amount} onChange={(e) => {if(Number(e.target.value) > props.amountInStock){
                         setAmount(props.amountInStock);

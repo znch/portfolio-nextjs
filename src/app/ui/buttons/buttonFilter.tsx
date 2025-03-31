@@ -6,9 +6,9 @@ export default function ButtonFilter(){
     return(
         <>
         <Link href="#">
-        <div className="flex inline-flex">
+        <div className="flex">
             <div className="my-auto">
-                <button className="">Seřadit</button>
+                <button className="">Filtrovat</button>
             </div>
             <div className="w-8 ml-2">
                 <span><AdjustmentsHorizontalIcon className=""></AdjustmentsHorizontalIcon></span>

@@ -7,7 +7,7 @@ export default function ButtonShoppingCart(){
     return(
         <>
         <Link href="/eshop-mockup/cart">
-            <div className="flex inline-flex">
+            <div className="flex">
                 <div className="my-auto">
                     <button className="">Košík</button>
                 </div>
