@@ -10,7 +10,7 @@ export default function Navbar() {
 
     const [useMobileNav, setUseMobileNav] = useState(false);
     
-    const navbarSm = <div className="w-full visible lg:invisible flex flex-col md:flex-row my-auto text-nowrap overflow-hidden text-left justify-start text-center">
+    const navbarSm = <div className="w-full visible lg:invisible flex flex-col md:flex-row my-auto text-nowrap overflow-hidden justify-start text-center">
         <div className="w-full shrink py-2 md:py-0 mx-2 border-b md:border-b-0 md:border-x border-white overflow-hidden">
             <Link href="/component-showcase"><h1 className="px-3">Ukázka komponent</h1></Link></div>
         <div className="w-full shrink py-2 md:py-0 mx-2 md:border-x border-white overflow-hidden">
@@ -43,8 +43,8 @@ export default function Navbar() {
         <>
         
         <div className="h-fit bg-black w-screen text-white text-2xl py-2 overflow-hidden fixed">
-            <div className="flex flex-row flex-nowrap justify-between lg:justify-normal my-auto">
-                <div className="flex grow-0 ml-4 lg:mx-10 my-auto basis-1/12">
+            <div className="flex flex-row flex-nowrap grow-0 justify-between lg:justify-normal my-auto">
+                <div className="ml-4 lg:mx-4 my-auto basis-1/12">
                     <Link href="/">
                         <LogoPortfolio textSize="text-sm" borderStyle="border-y border-white"></LogoPortfolio>
                     </Link>
