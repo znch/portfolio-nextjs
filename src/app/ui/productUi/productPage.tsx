@@ -25,8 +25,8 @@ export const ProductPage: FunctionComponent<Props> = (props) => {
                 <h1 className="md:pt-0 mx-auto align-middle font-thin text-2xl text-center text-white">PLACEHOLDER</h1>
             </div>
             <div className="w-full mx-auto md:mx-2 mt-8 md:mt-0 basis-2/3 bg-neutral-100 p-4 rounded-md">
-                <h1 className="text-3xl lg:text-4xl tracking-tighter">{props.productName}</h1>
-                <h1 className="py-2 text-2xl tracking-tighter font-thin">{props.productCategory}</h1>
+                <h1 className="text-xl lg:text-4xl tracking-tighter">{props.productName}</h1>
+                <h1 className="py-2 text-lg lg:text-2xl tracking-tighter font-thin">{props.productCategory}</h1>
                 <p className="py-2">{props.price}€</p>
                 <p className="py-2">Skladem: <strong>{props.amountInStock}</strong> ks</p>
                 <div className="">

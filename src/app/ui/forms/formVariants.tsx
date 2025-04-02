@@ -26,7 +26,7 @@ export function RegistrationFormClassic(){
                 <input size={10} className="px-2 w-full mb-4 rounded-md" type="email" id="email1" name="email1"/>
                 <label htmlFor="password1">Heslo:</label>
                 <input size={10} className="px-2 w-full mb-4 rounded-md" type="password1" id="password1" name="password1"/>
-                <div className="flex inline-flex mb-4">
+                <div className="flex mb-4">
                     <input type="checkbox" id="tos1"/><label htmlFor="tos1" className="pl-2 text-sm">Souhlasím s podmínkami použití.</label>
                 </div>
                 <div className="w-max px-2 rounded-md text-white py-1 bg-sky-300 mx-auto">
@@ -60,7 +60,7 @@ export function RegistrationFormModern(){
                 <input size={10} className="px-2 w-full mb-4" type="email" id="email2" name="email2"/>
                 <label htmlFor="password2">Heslo:</label>
                 <input size={10} className="px-2 w-full mb-4" type="password" id="password2" name="password2"/>
-                <div className="flex inline-flex mb-4">
+                <div className="flex mb-4">
                     <input type="checkbox" id="tos2"/><label htmlFor="tos2" className="pl-2 text-sm">Souhlasím s podmínkami použití.</label>
                 </div>
                 <div className="w-max px-2 text-white py-1 bg-black mx-auto">
@@ -92,7 +92,7 @@ export function RegistrationFormSquares(){
                 <input size={10} className="px-2 w-full mb-4 rounded-md" type="email" id="email3" name="email3"/>
                 <label htmlFor="password3">Heslo:</label>
                 <input size={10} className="px-2 w-full mb-4 rounded-md" type="password" id="password3" name="password3"/>
-                <div className="flex inline-flex mb-4">
+                <div className="flex mb-4">
                     <input type="checkbox" id="tos3"/><label htmlFor="tos3" className="pl-2 text-sm">Souhlasím s podmínkami použití.</label>
                 </div>
                 <div className="w-max px-2 rounded-md text-white py-1 bg-sky-300 mx-auto">

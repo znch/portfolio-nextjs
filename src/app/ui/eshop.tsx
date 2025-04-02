@@ -11,7 +11,7 @@ export function EshopPanelTop() {
 
     return(
     <>
-    <div className="w-full md:w-11/12 mx-auto h-24 flex flex-col md:flex-nowrap md:flex-row md:justify-between justify-center h-max">
+    <div className="w-full md:w-11/12 mx-auto h-24 flex flex-col md:flex-nowrap md:flex-row md:justify-between justify-center">
         <div className="">
             <Link href="/eshop-mockup">
                 <h1 className={`text-center md:text-left text-4xl font-bold`}>PORT<span className="font-normal">EFFO!</span></h1>

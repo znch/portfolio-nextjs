@@ -16,7 +16,8 @@ export default async function Page({params}: {params:Promise<{id: number}>}){
     
 
     // do tohoto arraye se vloží a vyfiltruje (Array.prototype.filter) 5 produktů se stejnou props.product_category
-    const selectedCategoryReccomended = [];
+    //TODO: přidat podmínku pro odstranění právě zobrazovaného produktu z listu nabízených produktů
+    const selectedCategoryReccomended = fetchedProducts.filter((category: any) => category.product_category === selectedProduct.product_category);
     
     return(
         <>
@@ -40,9 +41,9 @@ export default async function Page({params}: {params:Promise<{id: number}>}){
             productDescription={String(selectedProduct.product_description)}
             productName={String(selectedProduct.product_name)}
             ></ProductPage>
+            <div className="h-12"></div>
+            <RecommendedProducts category={selectedProduct.product_category} data={selectedCategoryReccomended}></RecommendedProducts>
             <div className="h-24"></div>
-            <RecommendedProducts category={selectedProduct.product_category} data={""}></RecommendedProducts>
-            
 
 
         </div>
