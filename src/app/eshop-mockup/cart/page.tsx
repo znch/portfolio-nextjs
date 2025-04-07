@@ -8,7 +8,7 @@ export default async function Page(){
 
         // fetchování json dat o produktech -> slice simuluje že uživatel má v košíku 5 produktů, passuju jako props do CartProductWrapper komponenty
         const fetchedProducts = await fetchProducts();
-        const slicedProducts = fetchedProducts.slice(0, 5);
+        const slicedProducts = fetchedProducts.slice(15, 20);
         const data = slicedProducts;
 
     return(

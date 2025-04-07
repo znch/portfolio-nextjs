@@ -17,6 +17,7 @@ interface Props{
     onClick: any;
     checkUserAmount: any;
     initUserAmount: number;
+    assignedIndex: number;
     
 }
 
@@ -29,11 +30,18 @@ export const ProductRow: FunctionComponent<Props> = (props) => {
     function handleOnChange(id:number , amount: number){
         props.checkUserAmount(id, amount); 
     }
+    const [visible, setVisible] = useState(true);
     
+    function handleHideComponent(){
+        
+        () => setVisible(false);
+    }
     
 
     return(
       <>
+      { visible &&
+        <>
         <div className="border-y my-2 border-black w-full flex">
             <div className="h-24 bg-black w-24 content-center flex-none">
                 <h1 className="mx-auto my-auto font-thin text-sm text-center text-white tracking-tighter text-balance">PLACE HOLDER</h1>
@@ -48,14 +56,16 @@ export const ProductRow: FunctionComponent<Props> = (props) => {
                     <h1 className="font-bold text-md md:text-lg mx-2 md:mx-4 my-auto align-middle">{(props.price * amount).toFixed(2)}€</h1>
                     <input className="w-10 flex-none" size={2} type="number" value={amount} onChange={(e) => {if(Number(e.target.value) > props.amountInStock){
                         setAmount(props.amountInStock);
-                        handleOnChange(props.id, props.amountInStock);
+                        handleOnChange(props.assignedIndex, props.amountInStock);
                     } else{
                         setAmount(Number(e.target.value));
-                        handleOnChange(props.id, Number(e.target.value))};}} min={0} max={props.amountInStock}/>
-                    <button onClick={props.onClick} className="w-8"><span><XMarkIcon></XMarkIcon></span></button>
+                        handleOnChange(props.assignedIndex, Number(e.target.value))};}} min={0} max={props.amountInStock}/>
+                    <button onClick={props.onClick}  className="w-8"><span><XMarkIcon onClick={() => setVisible(false)}></XMarkIcon></span></button>
                 </div>
             </div>
         </div>
+        </>
+        }
     </>
     );
 
