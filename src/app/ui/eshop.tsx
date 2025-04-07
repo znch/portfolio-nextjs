@@ -1,6 +1,5 @@
 import SearchBar from "./searchbar";
 import ProductCard from "./productUi/productCard";
-import { ShoppingCartIcon, AdjustmentsHorizontalIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { fetchProducts } from "../data/route";
 import Popup from "reactjs-popup";

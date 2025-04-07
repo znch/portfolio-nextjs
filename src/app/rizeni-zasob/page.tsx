@@ -25,7 +25,7 @@ export default function Page()
                 <input size={10} className="px-2 w-full mb-4" type="text" id="email2" name="email2"/>
                 <label htmlFor="password2">Heslo:</label>
                 <input size={10} className="px-2 w-full mb-4" type="password" id="password2" name="password2"/>
-                <div className="flex inline-flex mb-4">
+                <div className="flex mb-4">
                     <input type="checkbox" id="tos2"/><label htmlFor="tos2" className="pl-2 text-sm">Zapamatovat si mě.</label>
                 </div>
                 <div className="w-max px-2 text-white py-1 bg-black mx-auto">

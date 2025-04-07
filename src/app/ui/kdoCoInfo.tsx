@@ -17,7 +17,7 @@ export default function KdoCoInfo(){
 
                 </div>
                 <div className="w-screen pt-8 xl:pt-0 xl:w-2/3"><h1 className="text-center text-3xl">Co <span className="font-thin">ovládám.</span></h1>
-                <p className="w-2/3 pt-8 mx-auto">Co se týče technologií, se kterými to umím, tak to lze shrnout následovně... <strong>Styluju</strong> v CSS, Tailwindu a Bootstrapu. Webovky <strong>píšu</strong> v HTML a JavaScriptu, pracuji s různými knihovnami a frameworky jako třeba React a NextJS (takže taky JSX/TSX). Neztratím se ani v SQL databázích a integraci REST API, používám technologie jako PostgreSQL nebo SQLite.</p>
+                <p className="w-2/3 pt-8 mx-auto">Můj tech-stack lze shrnout následovně... <strong>Styluju</strong> v CSS, Tailwindu a Bootstrapu. Webovky <strong>píšu</strong> v HTML a JavaScriptu, pracuji s různými knihovnami a frameworky jako třeba React a NextJS (takže taky JSX/TSX). Neztratím se ani v SQL databázích a integraci REST API, používám technologie jako PostgreSQL nebo SQLite.</p>
                 
                 
                 <TechStackShowcase />

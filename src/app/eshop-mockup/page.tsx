@@ -4,6 +4,7 @@ import EshopPanelFilter from "../ui/eshopPanelFilter";
 
 
 
+
 export default function Page() {
 /** 
  * props: {searchParams?: Promise<{query?: string; page?: string;}>}
@@ -21,6 +22,7 @@ export default function Page() {
             <EshopPanelFilter />
           </div>
         </div>
+        
         
         
 

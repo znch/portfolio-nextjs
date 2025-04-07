@@ -12,6 +12,9 @@ const lexend = Lexend_Giga({
 
 export default function EshopLayout({children}: {children: React.ReactNode}){
     return(
-        <section className={`${lexend.className}`}>{children}</section>
+        <section className={`${lexend.className}`}>
+          <div></div>
+          {children}
+          </section>
     )
 }
