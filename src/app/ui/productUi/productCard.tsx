@@ -61,7 +61,7 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
 
         
 
-        <div className="w-[19rem] md:w-[18rem] mx-auto h-auto bg-black border-black border-2">
+        <div className="w-[19rem] md:w-[18rem] mx-auto h-auto bg-black border-black border-2 rounded-sm">
             <div className="h-64 w-full content-center bg-gradient-to-tr from-stone-300 via-gray-500 to-zinc-700">
                 
                 <h1 className="mx-auto my-auto font-thin text-2xl text-center text-white">PLACEHOLDER</h1>
@@ -79,7 +79,7 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
                         if(Number(e.target.value) > props.amountInStock){setSelectedAmount(props.amountInStock)}
                         else {setSelectedAmount(Number(e.target.value))}
                         }} min={0} max={props.amountInStock} className="w-max mr-2 text-black"/>
-                    <button className="border-white border-2" onClick={() => {saveItemInCart(props.id, selectedAmount, props.amountInStock); handleShowAddedToCart()}}><span className="px-2">Přidat</span></button>{showAddedToCart && popisekPridano}
+                    <button className="border-white border-2" onClick={() => {saveItemInCart(props.id, selectedAmount, props.amountInStock); handleShowAddedToCart()}}><span className="px-2">Přidat</span></button>
                     </div>
                     
                 </div>

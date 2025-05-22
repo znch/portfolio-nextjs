@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { AdjustmentsHorizontalIcon, ShoppingCartIcon} from "@heroicons/react/24/solid";
 import ButtonShoppingCart from "./buttons/buttonShoppingCart";
-import ButtonFilter from "./buttons/buttonFilter";
+import {ButtonFilter} from "./buttons/buttonFilter";
 
 
 
 export default function EshopPanelFilter(){
+
+    
 
     return(
         <>
@@ -15,7 +17,7 @@ export default function EshopPanelFilter(){
                 <div className="flex content-between justify-between w-full">
                 
                 <div className="my-auto mx-2">
-                <ButtonFilter></ButtonFilter>
+                <ButtonFilter displaySidebar></ButtonFilter>
                 </div>
                 <div className="my-auto mx-2">
                 <ButtonShoppingCart></ButtonShoppingCart>
