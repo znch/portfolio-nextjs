@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       
-        {/** Container pro fixnutý obrázek a child content */}
+        {/** Container pro obrázek a child content */}
         <div className="bg-fixed h-screen shadow-inner bg-cover bg-no-repeat flex flex-col gap-x-20" style={{backgroundImage: "url(/images/2024-07-16-Zlin-Heat-Wandering-34.jpg)"}}>
       
         {/** Container pro logo */}
