@@ -9,7 +9,7 @@ export default function TechStackShowcase(){
 
     return(
     <>
-    <div className="w-10/12 md:w-8/12 flex flex-wrap pt-8 mx-auto justify-center">
+    <div className="w-10/12 md:w-10/12 flex flex-wrap pt-8 mx-auto justify-center">
     
     
     <div className={`${iconStyle}`}><Image src="/w3_html5-ar21.svg" alt="" width={150} height={150}></Image></div>
