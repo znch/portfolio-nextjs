@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FunctionComponent, useState } from "react";
 import Link from "next/link";
+import { useId } from "react";
 
 interface Props{
     id: number;
@@ -59,12 +60,11 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
     return(
         <>
 
-        
-
-        <div className="w-[19rem] md:w-[18rem] mx-auto h-auto bg-black border-black border-2 rounded-sm">
-            <div className="h-64 w-full content-center bg-gradient-to-tr from-stone-300 via-gray-500 to-zinc-700">
+        <div className="w-[19rem] md:w-[18rem] mx-auto h-auto bg-black border-black border rounded-md">
+            <div className="h-64 overflow-hidden w-full content-center bg-gradient-to-tr from-stone-300 via-gray-500 to-zinc-700 rounded-t-md">
                 
-                <h1 className="mx-auto my-auto font-thin text-2xl text-center text-white">PLACEHOLDER</h1>
+                <Image alt="fotografie produktu" src={'https://picsum.photos/id/'+(props.id+50)+'/200'} height={290} width={290} className="mx-auto"></Image>
+                <div className="">PLACEHOLDER</div>
             </div>
             <div className="h-[16rem] text-white">
                 <div className="mx-2 py-2 flex flex-wrap h-full content-normal">
@@ -86,9 +86,17 @@ export const ProductCard : FunctionComponent<Props> = (props) => {
             </div>
         </div>  
         
-
         </>
     );
 }
 
 export default ProductCard;
+
+/*
+
+<div className="h-64 w-full content-center bg-gradient-to-tr from-stone-300 via-gray-500 to-zinc-700">
+    <h1 className="mx-auto my-auto font-thin text-2xl text-center text-white">PLACEHOLDER</h1>
+</div>
+
+
+*/

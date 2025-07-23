@@ -42,7 +42,7 @@ export default function Navbar() {
     return(
         <>
         
-        <div className="shadow-lg border-stone-800 border-b h-fit bg-black w-screen text-white text-2xl py-2 overflow-hidden fixed">
+        <div className="shadow-lg border-stone-800 border-b h-fit bg-black w-screen text-white text-2xl py-2 overflow-hidden fixed z-50">
             <div className="flex flex-row flex-nowrap grow-0 justify-between lg:justify-normal my-auto">
                 <div className="ml-4 lg:mx-4 my-auto basis-1/12">
                     <Link href="/">
