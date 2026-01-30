@@ -2,15 +2,18 @@ import Image from "next/image";
 import { LogoPortfolio } from "@/app/ui/logoPortfolio";
 import { ScrollArrowButton } from "./ui/scrollArrowButton";
 import KdoCoInfo from "./ui/kdoCoInfo";
+import Timeline from "./ui/timeline";
 
 
 export default function Home() {
 
-  ;
+  
   
 
   return (
     <>
+      <div className="flex-col">
+
       
         {/** Container pro obrázek a child content */}
         <div className="bg-fixed h-screen shadow-inner bg-cover bg-no-repeat flex flex-col gap-x-20" style={{backgroundImage: "url(/images/2024-07-16-Zlin-Heat-Wandering-34.jpg)"}}>
@@ -27,12 +30,18 @@ export default function Home() {
         
     
 
-        <div className="">
+        <div className="h-max">
         <KdoCoInfo></KdoCoInfo>
         </div>
         
-        
-      
+        <div>
+        <Timeline></Timeline>
+        </div>
+
+        <div className="h-screen">
+
+        </div>
+      </div>
     </>
     
   );

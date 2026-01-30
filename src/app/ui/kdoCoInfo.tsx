@@ -3,10 +3,9 @@ import TechStackShowcase from "./techStackShowcase";
 export default function KdoCoInfo(){
     return(
         <>
-            <div className="flex flex-wrap flex-column text-justify pt-36 h-screen" id="infoAbout">
+            <div className="flex flex-wrap flex-column text-justify pt-36 h-max" id="infoAbout">
                 <div className="w-screen xl:w-2/5"><h1 className="text-center text-3xl">Kdo <span className="font-thin">jsem.</span></h1>
-                    <p className="w-8/12 pt-8 mx-auto text-justify">Pokud si tohle čtete, tak se Vám nejspíš již pod ruku dostal můj životopis, se kterým jste se určitě dobře seznámily. Tak si to zkusíme ještě sumarizovat do kondenzovaného bloku textu.
-                    </p>
+                    
                     <p className="w-2/3 pt-8 mx-auto text-justify">K psaní webovek jsem se poprvé dostal na Obchodní Akademii v Uherském Hradišti, když jsem studoval program informačních technologií.
                     Od té doby můj zájem o navrhování a tvorbu responzivních webových aplikací dál rostl, prostřídal jsem řadu PHP frameworků, až jsem se v průběhu svých dalších studií, které pokračovali na UTB dostal k JavaScriptu. Po roce studií na fakultě aplikované informatiky, jsem se rozhodl přejít na fakultu logistiky s účelem získat více praktických informací v oblasti e-commerce. Tento krok mi pomohl porozumět každodenním výzvám, kterým podniky v tomto oboru čelí na procesní úrovni. Mimo e-commerce jsem se posunul také v oblastech projektového řízení, udržitelnosti, procesního inženýrství a integrovaných systémů řízení.
                     </p>
