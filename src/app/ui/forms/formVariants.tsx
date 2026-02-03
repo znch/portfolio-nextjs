@@ -19,18 +19,18 @@ export function RegistrationFormClassic(){
             </div>
             <form action="" className="flex flex-col p-4" method="post">
                 <label htmlFor="firstName1">Jméno:</label>
-                <input size={10} className="px-2 w-full mb-4 rounded-md mx-auto" type="text" id="firstName1" name="firstName1"/>
+                <input size={10} className="px-2 w-full mb-4 rounded-md mx-auto border-stone-200 border" type="text" id="firstName1" name="firstName1"/>
                 <label htmlFor="lastName1">Příjmení:</label>
-                <input size={10} className="px-2 w-full mb-4 rounded-md" type="text" id="lastName1" name="lastName1"/>
+                <input size={10} className="px-2 w-full mb-4 rounded-md border-stone-200 border" type="text" id="lastName1" name="lastName1"/>
                 <label htmlFor="email1">E-mailová adresa</label>
-                <input size={10} className="px-2 w-full mb-4 rounded-md" type="email" id="email1" name="email1"/>
+                <input size={10} className="px-2 w-full mb-4 rounded-md border-stone-200 border" type="email" id="email1" name="email1"/>
                 <label htmlFor="password1">Heslo:</label>
-                <input size={10} className="px-2 w-full mb-4 rounded-md" type="password1" id="password1" name="password1"/>
+                <input size={10} className="px-2 w-full mb-4 rounded-md border-stone-200 border" type="password1" id="password1" name="password1"/>
                 <div className="flex mb-4">
                     <input type="checkbox" id="tos1"/><label htmlFor="tos1" className="pl-2 text-sm">Souhlasím s podmínkami použití.</label>
                 </div>
                 <div className="w-max px-2 rounded-md text-white py-1 bg-sky-300 mx-auto">
-                    <input type="submit" value="Registrovat"/>
+                    <input type="submit" className="hover:cursor-pointer" value="Registrovat"/>
                 </div>
                 
                 
@@ -53,18 +53,18 @@ export function RegistrationFormModern(){
 
                 
                 <label htmlFor="firstName2">Jméno:</label>
-                <input size={10} className="px-2 w-full mb-4" type="text" id="firstName2" name="firstName2"/>
+                <input size={10} className="px-2 w-full mb-4 border-b border-dashed border-stone-900" type="text" id="firstName2" name="firstName2"/>
                 <label htmlFor="lastName2">Příjmení:</label>
-                <input size={10} className="px-2 w-full mb-4" type="text" id="lastName2" name="lastName2"/>
+                <input size={10} className="px-2 w-full mb-4 border-b border-dashed border-stone-900" type="text" id="lastName2" name="lastName2"/>
                 <label htmlFor="email2">E-mailová adresa:</label>
-                <input size={10} className="px-2 w-full mb-4" type="email" id="email2" name="email2"/>
+                <input size={10} className="px-2 w-full mb-4 border-b border-dashed border-stone-900" type="email" id="email2" name="email2"/>
                 <label htmlFor="password2">Heslo:</label>
-                <input size={10} className="px-2 w-full mb-4" type="password" id="password2" name="password2"/>
+                <input size={10} className="px-2 w-full mb-4 border-b border-dashed border-stone-900" type="password" id="password2" name="password2"/>
                 <div className="flex mb-4">
                     <input type="checkbox" id="tos2"/><label htmlFor="tos2" className="pl-2 text-sm">Souhlasím s podmínkami použití.</label>
                 </div>
                 <div className="w-max px-2 text-white py-1 bg-black mx-auto">
-                    <input type="submit" value="Registrovat"/>
+                    <input type="submit" className="hover:cursor-pointer" value="Registrovat"/>
                 </div>
                 </div>
                 

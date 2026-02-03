@@ -34,9 +34,9 @@ export default function Home() {
         <KdoCoInfo></KdoCoInfo>
         </div>
         
-        <div>
+        {/* {<div>
         <Timeline></Timeline>
-        </div>
+        </div>} */}
 
         <div className="h-screen">
 
