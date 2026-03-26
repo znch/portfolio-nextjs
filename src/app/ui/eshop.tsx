@@ -1,7 +1,7 @@
 import SearchBar from "./searchbar";
 import ProductCard from "./productUi/productCard";
 import Link from "next/link";
-import { fetchProducts } from "../data/route";
+import { fetchProducts } from "../data/fetches";
 import Popup from "reactjs-popup";
 
 
@@ -10,7 +10,7 @@ export function EshopPanelTop() {
 
     return(
     <>
-    <div className="w-full md:w-11/12 mx-auto h-24 flex flex-col md:flex-nowrap md:flex-row md:justify-between justify-center">
+    <div className="w-full md:w-11/12 mx-auto flex flex-col md:flex-nowrap md:flex-row md:justify-between justify-center">
         <div className="">
             <Link href="/eshop-mockup">
                 <h1 className={`text-center md:text-left text-4xl font-bold`}>PORT<span className="font-normal">EFFO!</span></h1>
@@ -30,15 +30,15 @@ export async function ProductWrapper() {
     //fetchování JSON dat produktů z SQLite DB přes api
     const fetchedProducts = await fetchProducts();
 
-    //vytvoření listu komponent (.slice abych měl jenom 40 produktů);
-    const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="w-min"><ProductCard key={product.id} id={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>}).slice(0,40);
-    //nápad na improvement - přidání pagination, lazy loading
+    //vytvoření listu komponent (.slice na prvních 40 produktů);
+    const data = fetchedProducts.map((product: any) => {return <div key={product.id} className=""><ProductCard key={product.id} id={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>}).slice(0,40);
+    //TODO - přidání pagination
 
     
     return(
         <>
-        <div className="mx-auto pt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-4">
+        <div className="mx-auto pt-8 w-full px-2 md:px-0 md:w-11/12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4">
                 {data}
             </div>
         </div>
@@ -47,3 +47,28 @@ export async function ProductWrapper() {
    
 }
 
+interface ProductProps {
+    id: number;
+    productName: string;
+    productCategory: string;
+    productDescription: string;
+    price: number;
+    amountInStock: number;
+}
+
+export async function ProductWrapperByCategory(props: any) {
+    const fetchedProducts = props.props;
+    console.log(props)
+
+    const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="w-fit"><ProductCard key={product.id} id={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>});
+
+    return(
+        <>
+        <div className="mx-auto pt-8 w-full px-2 md:px-0 md:w-11/12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4">
+                {data}
+            </div>
+        </div>
+        </>
+    );
+}

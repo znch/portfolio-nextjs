@@ -15,8 +15,8 @@ export default function Navbar() {
             <Link href="/component-showcase"><h1 className="px-3">Ukázka komponent</h1></Link></div>
         <div className="w-full shrink py-2 md:py-0 mx-2 md:border-x border-white overflow-hidden">
             <Link href="/eshop-mockup"><h1 className="px-3">E-shop mockup</h1></Link></div>
-        <div className="w-full shrink py-2 md:py-0 mx-2 border-t md:border-t-0 md:border-x border-white overflow-hidden">
-            <Link href="/rizeni-zasob"><h1 className="px-3">Autentizace</h1></Link></div>
+        {/* <div className="w-full shrink py-2 md:py-0 mx-2 border-t md:border-t-0 md:border-x border-white overflow-hidden">
+            <Link href="/rizeni-zasob"><h1 className="px-3">Autentizace</h1></Link></div> */}
     </div>;
 
     const navbarDefault = <div className="invisible lg:visible flex flex-nowrap my-auto w-px lg:basis-full lg:w-screen justify-start text-nowrap">
@@ -27,9 +27,9 @@ export default function Navbar() {
             <div className="w-max mx-4 border-x border-white overflow-hidden">
                 <Link href="/eshop-mockup"><h1 className="px-3">E-shop mockup</h1></Link>
             </div>
-            <div className="w-max mx-4 border-x border-white overflow-hidden">
+            {/* <div className="w-max mx-4 border-x border-white overflow-hidden">
                 <Link href="/rizeni-zasob"><h1 className="px-3">Autentizace</h1></Link>
-            </div>
+            </div> */}
     
     
     </div>;

@@ -5,7 +5,7 @@ import { useState } from "react";
 
 export default function CartProductWrapper({props}: {props: any}){
 
-    // po implementaci čtení z session/storage
+    //TODO - po implementaci čtení ze session storage
     function parseCartContent(){
         
 

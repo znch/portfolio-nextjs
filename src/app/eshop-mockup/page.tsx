@@ -1,8 +1,4 @@
 import {ProductWrapper, EshopPanelTop} from "../ui/eshop";
-import EshopPanelFilter from "../ui/eshopPanelFilter";
-
-
-
 
 
 export default function Page() {
@@ -15,24 +11,10 @@ export default function Page() {
 */
     return(
     <>
-    <div className={` pt-24 mx-auto w-screen mb-12 grid grid-cols-1`}>
-        <div className="w-full mx-auto">
-          <EshopPanelTop></EshopPanelTop>
-          <div className="pt-8">
-            <EshopPanelFilter />
-          </div>
-        </div>
-        
-        
-        
-
-        
+      <div>
         <ProductWrapper></ProductWrapper>
-        
-        
-        
+      </div>
 
-    </div>
     </>
     );
     

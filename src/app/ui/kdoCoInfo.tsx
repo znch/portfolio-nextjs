@@ -23,6 +23,7 @@ export default function KdoCoInfo(){
                 
                 
                 </div>
+                {/* <div><h1 className="text-center text-3xl">Na co se chci <span className="font-thin">zaměřit.</span></h1></div> */}
             </div>
         </>
     );

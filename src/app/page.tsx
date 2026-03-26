@@ -30,17 +30,13 @@ export default function Home() {
         
     
 
-        <div className="h-max">
+        <div className="h-screen">
         <KdoCoInfo></KdoCoInfo>
         </div>
         
         {/* {<div>
         <Timeline></Timeline>
         </div>} */}
-
-        <div className="h-screen">
-
-        </div>
       </div>
     </>
     

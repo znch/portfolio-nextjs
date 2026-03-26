@@ -34,8 +34,8 @@ export const ProductPage: FunctionComponent<Props> = (props) => {
                     <input type="number" value={selectedAmount} size={8} onChange={(e)=>{
                         if(Number(e.target.value) > props.amountInStock){setSelectedAmount(props.amountInStock)}
                         else {setSelectedAmount(Number(e.target.value))}
-                        }} min={0} max={props.amountInStock} className="w-max mr-2 text-black"/>
-                    <button className="ml-4 border-black border-2"><span className="px-2">Přidat</span></button>
+                        }} min={0} max={props.amountInStock} className="w-max mr-2 text-black border-b border-black pl-2 text-right"/>
+                    <button className="ml-4 bg-black text-white font-light p-2 rounded-md"><span className="px-2">Přidat</span></button>
                 
                 </div>
                 <p className="tracking-tighter my-2">{props.productDescription}</p>
