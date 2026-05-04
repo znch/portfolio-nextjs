@@ -6,3 +6,9 @@ export type Product = {
     price: number;
     amount_in_stock: number;
 }
+
+export type hpCategory = {
+    title: String;
+    subtitle: String | null;
+    products: any;
+}

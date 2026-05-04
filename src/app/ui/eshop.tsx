@@ -3,6 +3,8 @@ import ProductCard from "./productUi/productCard";
 import Link from "next/link";
 import { fetchProducts } from "../data/fetches";
 import Popup from "reactjs-popup";
+import { FunctionComponent } from "react";
+import { hpCategory } from "../data/definitions";
 
 
 
@@ -26,6 +28,7 @@ export function EshopPanelTop() {
     );
 }
 
+//deprecate this
 export async function ProductWrapper() {
     //fetchování JSON dat produktů z SQLite DB přes api
     const fetchedProducts = await fetchProducts();
@@ -47,18 +50,26 @@ export async function ProductWrapper() {
    
 }
 
-interface ProductProps {
-    id: number;
-    productName: string;
-    productCategory: string;
-    productDescription: string;
-    price: number;
-    amountInStock: number;
+export async function TargetProductWrapper(products: any) {
+
+    let data = products.products.map((product: any) => {
+        return <div key={product.id} className=""><ProductCard key={product.id} id={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>})
+    
+
+    return(
+        <>
+        <div className="mx-auto pt-8 w-full px-2 md:px-0 md:w-11/12">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4">
+                {data}
+            </div>
+        </div>
+        
+        </>
+    )
 }
 
 export async function ProductWrapperByCategory(props: any) {
     const fetchedProducts = props.props;
-    console.log(props)
 
     const data = fetchedProducts.map((product: any) => {return <div key={product.id} className="w-fit"><ProductCard key={product.id} id={product.id} productName={product.product_name} productCategory={product.product_category} productDescription={product.product_description} price={product.price} amountInStock={product.amount_in_stock}></ProductCard></div>});
 
@@ -71,4 +82,36 @@ export async function ProductWrapperByCategory(props: any) {
         </div>
         </>
     );
+}
+
+// interface hpCategory {
+//     title: String;
+//     subtitle: String | null;
+//     products: any;
+
+// }
+
+export const HomepageCategory : FunctionComponent<hpCategory> = (props) => {
+
+    let renderedSubtitle;
+    if(props.subtitle === null) {
+        renderedSubtitle = <div className="hidden"></div>
+    } else {
+        renderedSubtitle = <div><h2 className="text-md italic">{props.subtitle}</h2></div>
+    }
+
+    let targetProducts = props.products
+
+    return(
+        <>
+        <div>
+            <div className="mx-auto w-full px-2 md:px-0 md:w-11/12">
+            <h1 className="text-2xl">{props.title}</h1>
+            {renderedSubtitle}
+            </div>
+            <TargetProductWrapper products={targetProducts}></TargetProductWrapper>
+        </div>
+        </>
+    )
+
 }
