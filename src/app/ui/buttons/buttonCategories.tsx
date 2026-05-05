@@ -2,6 +2,7 @@
 import { FunctionComponent } from "react"
 import Link from "next/link"
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
+import { parseCategories } from "@/app/data/tools";
 
 interface Props {
     categories: any
@@ -15,21 +16,24 @@ function handleToggleDisplay() {
 
 export const ButtonCategories : FunctionComponent<Props> = (props) => {
 
-    const parsedCategories = []
-    let distinctBuffer: any[] = []
+    // const parsedCategories = []
+    // let distinctBuffer: any[] = []
     
-    for(let i = 0; i < props.categories.length; i++) {
-        let category = props.categories[i].product_category
-        if(category.includes(" -")) {
-            const newcat = category.split(" -")
-            if(!distinctBuffer.includes(newcat[0])) {
-                parsedCategories[i] = newcat[0]
-            }
-            distinctBuffer[i] = newcat[0]
-        } else {
-            parsedCategories[i] = category
-        }
-    }
+    // for(let i = 0; i < props.categories.length; i++) {
+    //     let category = props.categories[i].product_category
+    //     if(category.includes(" -")) {
+    //         const newcat = category.split(" -")
+    //         if(!distinctBuffer.includes(newcat[0])) {
+    //             parsedCategories[i] = newcat[0]
+    //         }
+    //         distinctBuffer[i] = newcat[0]
+    //     } else {
+    //         parsedCategories[i] = category
+    //     }
+    // }
+
+    const parsedCategories = parseCategories(props)
+
     // list render všech kategorií -> přesměruje na slug category
     const mappedCategories = parsedCategories.map((val: String, i: any) => {
         return <li key={i}><Link href={`/eshop-mockup/category/${val}`}>{val}</Link></li>

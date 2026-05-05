@@ -1,10 +1,12 @@
 import SearchBar from "./searchbar";
 import ProductCard from "./productUi/productCard";
 import Link from "next/link";
-import { fetchProducts } from "../data/fetches";
+import { fetchCategories, fetchProducts } from "../data/fetches";
 import Popup from "reactjs-popup";
 import { FunctionComponent } from "react";
-import { hpCategory } from "../data/definitions";
+import { hpBanner, hpCategory } from "../data/definitions";
+import Image from "next/image";
+import { parseCategories } from "../data/tools";
 
 
 
@@ -58,6 +60,7 @@ export async function TargetProductWrapper(products: any) {
 
     return(
         <>
+        {/* {grid-flow-col auto-cols-max}, změnit u všech 3 */}
         <div className="mx-auto pt-8 w-full px-2 md:px-0 md:w-11/12">
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4">
                 {data}
@@ -75,21 +78,15 @@ export async function ProductWrapperByCategory(props: any) {
 
     return(
         <>
+        {/* {grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4} */}
         <div className="mx-auto pt-8 w-full px-2 md:px-0 md:w-11/12">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4">
+            <div className="grid grid-flow-col md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4">
                 {data}
             </div>
         </div>
         </>
     );
 }
-
-// interface hpCategory {
-//     title: String;
-//     subtitle: String | null;
-//     products: any;
-
-// }
 
 export const HomepageCategory : FunctionComponent<hpCategory> = (props) => {
 
@@ -114,4 +111,44 @@ export const HomepageCategory : FunctionComponent<hpCategory> = (props) => {
         </>
     )
 
+}
+
+export const HomepageBanner : FunctionComponent<hpBanner> = (props) => {
+
+
+
+    return(
+        <>
+        <Image alt="" src={""} width={0}>
+        </Image>
+        </>
+    );
+}
+
+
+export const HomepageSidebar : FunctionComponent = () => {
+
+    const fetchedCategories = fetchCategories()
+    const categoriesList = parseCategories(fetchedCategories)
+    const featuredCategories = categoriesList.map(category => {
+        return(
+        <li></li>
+    )}) 
+
+    return(
+        <>
+        <div>
+            
+            <ul>
+                <span>Doporučené kategorie!</span>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+            </ul>
+        </div>
+        </>
+    );
 }

@@ -12,3 +12,15 @@ export type hpCategory = {
     subtitle: String | null;
     products: any;
 }
+
+export type hpBanner = {
+    title: String;
+    subtitle: String;
+    imageOptions: {
+        alt: String;
+        src: String;
+        width: Number;
+        height: Number;
+    }
+    position: Number;
+}
