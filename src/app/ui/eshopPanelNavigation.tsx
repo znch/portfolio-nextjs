@@ -1,15 +1,14 @@
-
-import Link from "next/link";
 import { AdjustmentsHorizontalIcon, ShoppingCartIcon} from "@heroicons/react/24/solid";
 import ButtonShoppingCart from "./buttons/buttonShoppingCart";
 import {ButtonFilter} from "./buttons/buttonFilter";
 import {ButtonCategories} from "./buttons/buttonCategories";
 import { fetchCategories } from "../data/fetches";
+import { parseCategories } from "../data/tools"
 
 
 export default async function EshopPanelNavigation(){
 
-    const fetchedCategories = await fetchCategories()
+    const parsedCategories = await parseCategories()
 
     return(
         <>
@@ -19,7 +18,7 @@ export default async function EshopPanelNavigation(){
 
                 <div className="my-auto mx-2">
                 {/* <ButtonFilter displaySidebar></ButtonFilter> */}
-                <ButtonCategories categories={fetchedCategories}></ButtonCategories>
+                <ButtonCategories categories={parsedCategories}></ButtonCategories>
                 </div>
                 <div className="my-auto mx-2">
                 <ButtonShoppingCart></ButtonShoppingCart>

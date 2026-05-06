@@ -4,7 +4,7 @@ import Link from "next/link";
 import { fetchCategories, fetchProducts } from "../data/fetches";
 import Popup from "reactjs-popup";
 import { FunctionComponent } from "react";
-import { hpBanner, hpCategory } from "../data/definitions";
+import { Categories, hpBanner, hpCategory } from "../data/definitions";
 import Image from "next/image";
 import { parseCategories } from "../data/tools";
 
@@ -80,7 +80,7 @@ export async function ProductWrapperByCategory(props: any) {
         <>
         {/* {grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4} */}
         <div className="mx-auto pt-8 w-full px-2 md:px-0 md:w-11/12">
-            <div className="grid grid-flow-col md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 justify-evenly gap-1 md:gap-4">
                 {data}
             </div>
         </div>
@@ -125,28 +125,26 @@ export const HomepageBanner : FunctionComponent<hpBanner> = (props) => {
     );
 }
 
+export const HomepageSidebar : FunctionComponent<Categories> = (props) => {
 
-export const HomepageSidebar : FunctionComponent = () => {
-
-    const fetchedCategories = fetchCategories()
-    const categoriesList = parseCategories(fetchedCategories)
-    const featuredCategories = categoriesList.map(category => {
+    //todo: víceúrovňové kategorie
+    const categoriesList = props.categories
+    const featuredCategories = categoriesList.map((val: String, i: any) => {
         return(
-        <li></li>
+        <li key={i} className="hover:bg-black hover:text-white transition-all py-1 px-2 border-black flex"><Link className="w-full" href={`/eshop-mockup/category/${val}`}>{val}</Link></li>
     )}) 
 
     return(
         <>
-        <div>
+        <div className="">
+            <div className="bg-black h-max flex">
+            <span className="p-4 text-center text-white">Zkuste zboží z námi doporučených kategorií</span>
+                
+            </div>
             
-            <ul>
-                <span>Doporučené kategorie!</span>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
-                <li>5</li>
-                <li>6</li>
+            <ul className="border border-black ">
+                
+                {featuredCategories}
             </ul>
         </div>
         </>

@@ -24,3 +24,7 @@ export type hpBanner = {
     }
     position: Number;
 }
+
+export type Categories = {
+    categories: Array<String>
+}

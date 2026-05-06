@@ -1,5 +1,6 @@
 import { HomepageSidebar, HomepageBanner, HomepageCategory, ProductWrapper, EshopPanelTop} from "../ui/eshop";
 import { getProductsById } from "../data/controller";
+import { parseCategories } from "../data/tools";
 
 export default async function Page() {
 
@@ -17,17 +18,21 @@ export default async function Page() {
       (response) => {return response.json()}
     )
 
-  
+    const categoriesList = await parseCategories()
+
     return(
     <>
       <div className="flex flex-wrap">
 
-        <div className="mx-auto w-full px-2 md:px-0 md:w-11/12 min-h-48 flex flex-wrap">
-          <div className="w-1/3 h-full">
-            <HomepageSidebar></HomepageSidebar>  
+        <div className="mx-auto w-full px-2 md:px-0 md:w-11/12 min-h-48 flex flex-wrap mb-12">
+          <div className="w-1/5 h-full">
+            <HomepageSidebar categories={categoriesList}></HomepageSidebar>  
           </div>
-          <div className="w-2/3 h-full bg-red-400">
+          <div className="w-4/5 pl-12 flex">
             {/* <HomepageBanner></HomepageBanner> */}
+            <span className="h-full w-full bg-red-400 flex">
+              <span className="mx-auto my-auto w-max h-max text-2xl text-white lg:text-6xl">PLACEHOLDER</span>
+            </span>
           </div>
         </div>
         
